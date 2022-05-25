@@ -1,0 +1,534 @@
+
+html{
+    scroll-behavior: smooth;
+}
+:root{
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+
+    --text-primary: #dbdbdb;
+    --text-secondary: #ffffff;
+    --bg-primary: rgb(27, 27, 29);
+    --bg-secondary: rgb(22, 22, 24);
+    --lines: rgb(33,33,38);
+    --transition-speed: 300ms;
+    --highlight-color: #e89862;
+    --complementary-color: #62B2E8;
+}
+
+body{
+    color: rgb(255, 255, 255);
+    background-color: var(--bg-secondary);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+main{
+    margin-left: 5rem;
+}
+
+footer{
+    padding: 0 2rem 1rem 2rem;
+    text-align: right; 
+    font-size: 10px;
+}
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 1rem;
+}
+.gridItem{
+    height: 300px;
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-size: 12px;
+    transition: transform var(--transition-speed);
+}
+
+.gridItem img{
+    max-width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    object-fit: cover;   
+}
+
+.gridItem .imgLarga{
+    width: 100%;
+    max-height: 100%;
+    border-radius: 4px;
+    object-fit: cover;   
+}
+
+.gridItem:hover{
+    transform: translate(0,-15px);
+}
+
+img{
+    max-width: 100%;
+    border-radius: 4px;
+}
+.center{
+    background:none;
+    margin: auto;
+}
+
+article h1{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.clickable{
+    position: relative;
+    text-decoration: none;
+}
+
+.clickable::before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--highlight-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.clickable:hover::before{
+    transform: scaleX(1);
+}
+
+.parallax{
+    min-height: 400px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin: 1rem 0 1rem 0;
+}
+
+#parallax1{
+    background-image: url("../img/206-9.jpg");
+    
+}
+#parallax2{
+    background-image: url("../img/206-13.jpg");
+}
+#parallax3{
+    background-image: url("../img/206-12.jpg");
+}
+
+#parallax4{
+    background-image: url("../img/206-5.jpg");
+}
+#parallax5{
+    background-image: url("../img/206.jpg");
+}
+
+
+header{
+    padding: 2rem;
+}
+
+article ul,.mainGrid ul{
+    list-style: none;
+    text-transform: uppercase;
+    font-style: italic;
+    text-align: justify;
+}
+
+.mainGrid li:nth-child(odd), article li:nth-child(odd){
+    color: var(--text-primary);
+}
+
+h1,h2,h3{
+    color: var(--highlight-color);
+    border-bottom: 2px solid var(--lines);
+}
+
+#map{
+    display: flex;
+    margin:auto auto 1rem auto;
+    width: 80%;
+    height: 30%;
+
+}
+
+.grid-list{
+    color: var(--text-primary);
+    display: grid;
+    padding: 0;
+    text-align: center;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-columns div{
+    background: var(--bg-primary); 
+    border-radius: 4px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.grid-columns p{
+    color:var(--text-primary)
+}
+
+.grid-columns div i{
+    margin-top: auto;
+}
+
+.formulario{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.formulario_label{
+    display: block;
+    font-weight: 700;
+    padding: .25rem;
+    cursor: pointer;
+}
+
+.formulario_grupo{
+    width: 100%;
+}
+
+.formulario_grupo-input{
+    position: relative;
+}
+
+.formulario_input{
+    width: 98%;
+    background: #ffffff;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding: 0;
+    transition: .5s ease all;
+}
+
+.formulario_input:focus{
+    border: 3px solid var(--highlight-color);
+    outline: none;
+}
+
+.formulario_input-error{
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.formulario_input-error-activo{
+    display: block;
+}
+
+.formulario_validacion-estado{
+    color: black;
+    position: absolute;
+    right: 25px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+
+.formulario_mensaje,
+.formulario_grupo-btn-enviar,
+.formulario_grupo-texto,
+#grupo_tipo{
+    grid-column: span 2;
+}
+
+#consulta{
+    width: 99%;
+}
+
+.formulario_mensaje{
+    height: 2.5rem;
+    line-height: 2.5rem;
+    background: var(--complementary-color);
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+
+.formulario_mensaje-activo{
+    display: block;
+}
+
+.formulario_mensaje p{
+    margin: 0;
+}
+
+.formulario_grupo-btn-enviar{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario_btn{
+    height: 2.5rem;
+    line-height: 2.5rem;
+    width: 30%;
+    background: var(--highlight-color);
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease all
+}
+
+.formulario_mensaje-exito{
+    font-size: 14px;
+    color: var(--highlight-color);
+    display: none;
+}
+
+.formulario_mensaje-exito-activo{
+    display: block;
+}
+
+.formulario_grupo-input textarea{
+    width: 99%;
+}
+
+textarea{
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+}
+
+#text{
+    height: 10rem;
+}
+
+/* ----------- Estilos para validacion ---------------- */
+.formulario_grupo-correcto .formulario_validacion-estado{
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.formulario_grupo-incorrecto .formulario_label{
+    color: #bb2929;
+}
+
+.formulario_grupo-incorrecto .formulario_validacion-estado{
+    color: #bb2929;
+    opacity: 1;
+}
+
+.formulario_grupo-incorrecto .formulario_input{
+    border: 3px solid #bb2929;
+}
+
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+    .mainGrid{
+        padding: 0 1rem 0 1rem;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(5,auto);
+        grid-gap: 0.5rem;
+        grid-template-areas: "ctn"
+                             "imagen"
+                             "l1"
+                             "l2"
+                             "redsoc"
+    }
+
+    .grid-columns{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 0.5rem;
+        text-align: center;
+    }
+
+    article{
+        padding: 0 0.5rem 0.5rem 0.5rem;
+        margin: 0.5rem;
+        text-align: justify;
+    }
+
+    #formConsulta{
+        width: auto;
+    }
+
+    .formulario{
+        grid-template-columns: 1fr;
+    }
+
+    .formulario_mensaje,
+    .formulario_grupo-btn-enviar,
+    .formulario_grupo-texto,
+    #grupo_tipo{
+    grid-column: span 1;
+}
+
+    .formulario_btn{
+        width: 100%;
+    }
+
+    .parallax{
+        min-height: 200px;
+    }
+
+    .gallery{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .gridItem img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .gridItem{
+        /* height: 180px; */
+        border-radius: 4px;
+        color: var(--text-primary);
+    }
+
+    footer{
+        height: 12rem;
+    }
+
+    .navbar {
+      bottom: 0;
+      width: 100vw;
+      height: 5rem;
+      position: fixed;
+    }
+  
+    .logo {
+      display: none;
+    }
+  
+    .navbar-nav {
+      flex-direction: row;
+    }
+  
+    .nav-link {
+      justify-content: center;
+    }
+  
+    main {
+      margin: 0;
+    }
+  }
+
+/*Tablets*/
+@media only screen and (min-width: 600px) and (max-width:900px){
+    .mainGrid{
+        padding: 0 2rem 0 2rem;
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: repeat(6,1fr);
+        grid-gap: 0.5rem;
+        grid-template-areas: "ctn ctn ctn ctn redsoc redsoc"
+                             "ctn ctn ctn ctn imagen imagen"
+                             "ctn ctn ctn ctn imagen imagen"
+                             "l1 l1 l2 l2 imagen imagen"
+                             "l1 l1 l2 l2 imagen imagen"
+                             "l1 l1 l2 l2 imagen imagen";
+    }
+    .grid-columns{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 0.5rem;
+        text-align: center;
+    }
+    article{
+        padding: 0 0.5rem 0.5rem 0.5rem;
+        margin: 0.5rem;
+        text-align: justify;
+    }
+
+    .parallax{
+        min-height: 200px;
+    }
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+      }
+    
+    .logo {
+    display: none;
+    }
+
+    .navbar-nav {
+    flex-direction: row;
+    }
+
+    .nav-link {
+    justify-content: center;
+    }
+
+    main {
+    margin: 0;
+    }
+}
+  
+  /* Large screens */
+@media only screen and (min-width: 900px) {
+    .mainGrid{
+        padding: 0 2rem 0 2rem;
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: repeat(6,1fr);
+        grid-gap: 0.5rem;
+        grid-template-areas: "ctn ctn ctn ctn redsoc redsoc"
+                             "ctn ctn ctn ctn imagen imagen"
+                             "ctn ctn ctn ctn imagen imagen"
+                             "l1 l1 l2 l2 imagen imagen"
+                             "l1 l1 l2 l2 imagen imagen"
+                             "l1 l1 l2 l2 imagen imagen";
+    }
+
+    .grid-columns{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 0.5rem;
+        text-align: center;
+    }
+
+    article{
+    padding: 0 2rem 1rem 2rem;
+    margin: 1rem 6rem 1rem 5rem;
+    width: 80%;
+    text-align: justify;
+    }
+
+    .navbar {
+      top: 0;
+      width: 5rem;
+      height: 100vh;
+    }
+  
+    .navbar:hover {
+      width: 14.2rem;
+    }
+  
+    .navbar:hover .link-text {
+      display: inline;
+    }
+  
+    .navbar:hover .logo svg
+    {
+      margin-left: 11rem;
+    }
+  
+    .navbar:hover .logo-text
+    {
+      left: 0px;
+    }
+}

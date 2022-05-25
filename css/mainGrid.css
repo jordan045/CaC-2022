@@ -1,0 +1,61 @@
+/*---------------------------------------MAIN GRID-------------------------------------------*/
+.mainGrid .content,
+.mainGrid .imagen,
+.mainGrid .lista1,
+.mainGrid .lista2,
+.mainGrid .redsoc{
+    background: white;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.mainGrid .content{
+    background: var(--bg-primary);  
+    grid-area: ctn;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.mainGrid .imagen{
+    text-align: center;
+    color: var(--color-text);
+    font-style: italic;
+    grid-area: imagen;
+    background-color: var(--bg-primary);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.mainGrid .lista1{
+    background-color: var(--bg-primary);
+    color: var(--color-text);
+    grid-area: l1;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.mainGrid .lista2{
+    background-color: var(--bg-primary);
+    color: var(--color-text);
+    grid-area: l2;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.mainGrid .redsoc{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    color: var(--color-text);
+    font-size: 2.5rem;
+    background-color: var(--bg-primary);
+    grid-area: redsoc;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.redsoc > *{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icoRedes a{
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+#logoPrincipal{
+    width: 13rem;
+    display:flex;
+    margin: 0.5rem auto auto auto;
+}

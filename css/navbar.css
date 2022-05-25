@@ -1,0 +1,89 @@
+/* -------------- NAV BAR --------------*/
+.navbar{ /*Contenedor general*/
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: width var(--transition-speed);
+    /* overflow: scroll; */
+    z-index: 12;
+}
+
+.navbar-nav{ /*Lista con elementos del nav*/
+    list-style:none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+}
+
+.nav-item{ /*Cada item de la lista*/
+    width:100%;
+}
+
+.nav-item:last-child{ /*Con esto ponemos el último elemento abajo del todo*/
+    margin-top: auto;
+}
+
+.nav-link{ /*Clase del elemento clikeable que nos hara navegar*/
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: var(--transition-speed);
+}
+.nav-link:hover{
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--highlight-color)
+}
+
+.link-text{ 
+    display:none;
+    margin-left: 1rem;
+}
+
+.nav-link i{
+    min-width: 2rem;
+    margin: 0 1.4rem;
+}
+
+.fa-secondary{
+    color: var(--text-primary);
+}
+.fa-primary, .fa-secondary{
+transition: var(--transition-speed);
+}
+
+.logo{ /*Reglas especiales para el header del nav*/
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3ch;
+    width: 100%;
+}
+
+.logo img{
+    display: flex;
+    align-items: center;
+    transform: translate(17px);
+    transition: transform var(--transition-speed);
+}
+.logo-text{
+    display: inline;
+    position: absolute;
+    left: -150px;
+    transition: var(--transition-speed);
+}
+
+.navbar:hover .logo img{
+    transform: translate(170px);
+}
